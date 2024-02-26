@@ -1,5 +1,5 @@
 const path = require("path");
-const LOG_ROOT_DIR = process.env.LOG_ROOT_DIR || path.join(__dirname, "./logs");
+const LOG_ROOT_DIR = process.env.LOG_ROOT_DIR || path.join(__dirname, "../logs");
 
 module.exports = {
   appenders: {
