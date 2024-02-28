@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sample Weblog Application</title>
-    <%- include("./_share/stylesheets.ejs") %>
+    <%- include("../_share/stylesheets.ejs") %>
   </head>
   <body>
-    <%- include("./_share/navbar.ejs") %>
+    <%- include("../_share/navbar.ejs") %>
     <div class="col-lg-8 mx-auto p-3 py-md-5">
       <header class="d-flex align-items-center pb-3 my-5 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-          <span class="fs-4">Welcome to Node.js + Express + MongoDB Sample Application</span>
+          <span class="fs-6 text-end">Published on <%= published.toLocaleString() %>. Updated on <%= updated.toLocaleString() %></span>
         </a>
       </header>
 
       <main>
-        <h1>Get started with Bootstrap</h1>
-        <p class="fs-5 col-md-8">Quickly and easily get started with Bootstrap's compiled, production-ready files with this barebones example featuring some basic HTML and helpful links. Download all our examples to get started.</p>
-
-        <div class="mb-5">
-          <a href="/docs/5.0/examples/" class="btn btn-primary btn-lg px-4">Download examples</a>
-        </div>
+        <h1><%= title %></h1>
+        <p class="fs-5 col-md-8 my-5"><%= content %></p>
+        
 
         <hr class="col-3 col-md-2 mb-5">
 
@@ -47,9 +44,9 @@
           </div>
         </div>
       </main>
-      <%- include("./_share/footer.ejs") %>
+      <%- include("../_share/footer.ejs") %>
     </div>
 
-    <%- include("./_share/javascripts.ejs") %>
+    <%- include("../_share/javascripts.ejs") %>
   </body>
 </html>

@@ -22,10 +22,11 @@ app.use(accesslogger());
 
 // set routes
 app.use("/", require("./routes/index.js"));
+app.use("/posts", require("./routes/posts.js"));
 
 // set application logger
 app.use(applicationlogger());
-
+  
 // application listen
 app.listen(PORT, _ => {
   logger.application.info(`Application listening at http://127.0.0.1:${PORT}`);
