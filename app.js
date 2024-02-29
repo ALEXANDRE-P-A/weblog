@@ -22,7 +22,8 @@ app.use(accesslogger());
 
 // set routes
 app.use("/", require("./routes/index.js"));
-app.use("/posts", require("./routes/posts.js"));
+app.use("/posts/", require("./routes/posts.js"));
+app.use("/search/", require("./routes/search.js"));
 
 // set application logger
 app.use(applicationlogger());

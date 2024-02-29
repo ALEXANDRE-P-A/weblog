@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Weblog Application</title>
+    <%- include("../_share/stylesheets.ejs") %>
+  </head>
+  <body>
+    <%- include("../_share/navbar.ejs") %>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <main role="main">
+
+        <%= keyword %>
+        <form class="form-inline mt-5 mb-5" method="GET" action="/search">
+          <input class="form-control" type="text" id="keyword" name="keyword" value="<%= keyword %>" />
+          <input class="btn btn-default ml-2" type="submit" value="Search" />
+        </form>
+
+      </main>
+      <%- include("../_share/footer.ejs") %>
+    </div>
+    <%- include("../_share/javascripts.ejs") %>
+  </body>
+</html>
