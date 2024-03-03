@@ -1,9 +1,2 @@
-[2024-02-29T21:11:06.051] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:24:15.497] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:24:50.890] [ERROR] application - Failed to lookup view "aaa" in views directory "C:\Users\alexa\OneDrive\デスクトップ\nodejs_express_mongodb\created_by_myself\weblog2\views"
-[2024-02-29T21:25:30.858] [ERROR] application - Failed to lookup view "aaa" in views directory "C:\Users\alexa\OneDrive\デスクトップ\nodejs_express_mongodb\created_by_myself\weblog2\views"
-[2024-02-29T21:30:11.792] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:31:36.717] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:32:12.432] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:34:02.757] [INFO] application - Application listening at http://127.0.0.1:3000
-[2024-02-29T21:34:40.133] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-03T16:16:03.826] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-03T16:43:07.813] [INFO] application - Application listening at http://127.0.0.1:3000

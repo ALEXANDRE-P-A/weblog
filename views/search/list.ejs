@@ -5,18 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sample Weblog Application</title>
     <%- include("../_share/stylesheets.ejs") %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
   <body>
     <%- include("../_share/navbar.ejs") %>
     <div class="col-lg-8 mx-auto p-3 py-md-5">
       <main role="main">
 
-        <%= keyword %>
-        <form class="form-inline mt-5 mb-5" method="GET" action="/search">
-          <input class="form-control" type="text" id="keyword" name="keyword" value="<%= keyword %>" />
-          <input class="btn btn-default ml-2" type="submit" value="Search" />
+        <form method="GET" action="/search" class="row g-1 justify-content-center align-items-center">
+          <div class="col-8">
+            <input type="text" class="form-control" name="keyword" placeholder="keyword" value="<%= keyword %>">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-secondary">
+              search
+            </button>
+          </div>
         </form>
 
+        <div class="my-5 row col-12 row g-1">
+          <% for(let doc of docs){ %>
+          <%- include("./doc.ejs", doc) %>
+          <% } %>
+        </div>
+
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item mx-3"><a class="page-link" href="#">1</a></li>
+            <li class="page-item mx-3"><a class="page-link" href="#">2</a></li>
+            <li class="page-item mx-3"><a class="page-link" href="#">3</a></li>
+            <li class="page-item mx-3"><a class="page-link" href="#">4</a></li>
+            <li class="page-item mx-3"><a class="page-link" href="#">5</a></li>
+          </ul>
+        </nav>
       </main>
       <%- include("../_share/footer.ejs") %>
     </div>
