@@ -1,3 +1,9 @@
 body {
   background-image: url("../images/body-back-img.png");
 }
+
+@media screen and (max-width: 767px) {
+  body {
+    background-size: 100%;
+  }
+}

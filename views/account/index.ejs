@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Member Menu</title>
+    <%- include("../_share/stylesheets.ejs") %>
+  </head>
+
+  <body>
+    <%- include("../_share/navbar.ejs") %>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <main role="main" class="container">
+
+        <div class="border-bottom mt-5 mb-5">
+          <h1>Member Menu</h1>
+        </div>
+        <nav class="nav flex-column">
+          <a class="nav-link active disabled" >Home</a>
+          <a class="nav-link" href="#">New article registration</a>
+          <a class="nav-link" href="#">Edit/Delete existing article</a>
+        </nav>
+
+      </main>
+      <%- include("../_share/footer.ejs") %>
+    </div>
+    <%- include("../_share/javascripts.ejs") %>
+  </body>
+</html>
