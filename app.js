@@ -10,6 +10,7 @@ const accesslogger = require("./lib/log/accesslogger.js");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 // set view engine
 app.set("view engine", "ejs");
@@ -24,7 +25,7 @@ app.use(accesslogger());
 app.use("/", require("./routes/index.js"));
 app.use("/posts/", require("./routes/posts.js"));
 app.use("/search/", require("./routes/search.js"));
-app.use("/account/", require("./routes/accout.js"));
+app.use("/account/", require("./routes/account/account.js"));
 
 // set application logger
 app.use(applicationlogger());

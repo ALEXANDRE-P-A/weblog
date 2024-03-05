@@ -1,9 +1,16 @@
 body {
   background-image: url("../images/body-back-img.png");
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 @media screen and (max-width: 767px) {
   body {
     background-size: 100%;
+  }
+
+  .nav-for-sp {
+    padding-bottom: 10px;
   }
 }
