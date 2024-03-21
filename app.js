@@ -11,9 +11,11 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // set view engine
 app.set("view engine", "ejs");
+app.disable("x-powered-by");
 
 // static resources
 app.use("/public", express.static(path.join(__dirname, "/public")));

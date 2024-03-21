@@ -34,7 +34,7 @@ const validateRegistData = body => {
   return isValidated ? undefined : errors;
 };
 
-router.get("/regist", (req, res) => {
+router.get("/regist/input", (req, res) => {
   res.render("./account/posts/regist-form.ejs");
 });
 
@@ -53,6 +53,11 @@ router.post("/regist/confirm", (req, res) => {
   }
 
   res.render("./account/posts/regist-confirm.ejs", { original });
+});
+
+router.post("/regist/execute", (req, res) => {
+  console.log(req.body);
+  res.render("./account/posts/regist-complete.ejs");
 });
 
 module.exports = router;
