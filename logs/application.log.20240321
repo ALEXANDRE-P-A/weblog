@@ -1,0 +1,24 @@
+[2024-03-21T14:08:50.773] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T14:26:50.183] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T14:28:19.284] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:27:58.018] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:28:59.405] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:29:15.643] [ERROR] application - errors is not defined
+[2024-03-21T15:29:54.826] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:30:30.011] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:35:36.464] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:38:07.588] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:43:25.268] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:44:16.412] [ERROR] application - Failed to lookup view "Execute" in views directory "C:\Users\alexa\OneDrive\デスクトップ\nodejs_express_mongodb\created_by_myself\weblog2\views"
+[2024-03-21T15:46:22.533] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:46:56.772] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:50:36.911] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T15:53:02.585] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:03:25.243] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:05:32.659] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:11:26.405] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:13:45.366] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:16:56.043] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:23:53.081] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:43:58.507] [INFO] application - Application listening at http://127.0.0.1:3000
+[2024-03-21T16:44:22.496] [ERROR] application - Failed to lookup view "./account/posts/regist-complete.ejs" in views directory "C:\Users\alexa\OneDrive\デスクトップ\nodejs_express_mongodb\created_by_myself\weblog2\views"

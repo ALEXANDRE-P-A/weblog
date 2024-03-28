@@ -1,4 +1,8 @@
+const { CONNECT_URL, DATABASE } = require("../../config/mongodb.config.js");
+
 const router = require("express").Router();
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const tokens = new require("csrf")();
 
 const createRegistData = body => {
   const dateTime = new Date();
@@ -35,7 +39,12 @@ const validateRegistData = body => {
 };
 
 router.get("/regist/input", (req, res) => {
-  res.render("./account/posts/regist-form.ejs");
+  tokens.secret((error, secret) => {
+    let token = tokens.create(secret);
+    req.session._csrf = secret;
+    res.cookie("_csrf", token);
+    res.render("./account/posts/regist-form.ejs");
+  });
 });
 
 router.post("/regist/input", (req, res) => {
@@ -55,9 +64,44 @@ router.post("/regist/confirm", (req, res) => {
   res.render("./account/posts/regist-confirm.ejs", { original });
 });
 
-router.post("/regist/execute", (req, res) => {
-  console.log(req.body);
-  res.render("./account/posts/regist-complete.ejs");
+router.post("/regist/execute", async (req, res) => {
+
+  const secret = req.session._csrf;
+  const token = req.cookies._csrf;
+
+  if(tokens.verify(secret, token) === false)
+    throw new Error("Invalid Token.");
+  
+  const original = createRegistData(req.body);
+  const errors = validateRegistData(req.body);
+
+  if(errors){
+    res.render("./account/posts/regist-form.ejs", { errors, original });
+    return;
+  }
+
+  const uri = CONNECT_URL || "mongodb://root:safada_42@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.3";
+
+  const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    } 
+  });
+
+  try {
+    await client.connect();
+    const db = client.db(DATABASE);
+    await db.collection("posts").insertOne(original);
+    delete req.session._csrf;
+    res.clearCookie("_csrf");
+    res.render("./account/posts/regist-complete.ejs");
+  } catch(err) {
+    console.log(err);
+  } finally {
+    await client.close();
+  }
 });
 
 module.exports = router;

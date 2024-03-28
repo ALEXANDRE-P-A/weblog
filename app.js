@@ -2,10 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
 const logger = require("./lib/log/logger.js");
 const applicationlogger = require("./lib/log/applicationlogger.js");
 const accesslogger = require("./lib/log/accesslogger.js");
+
+const { SESSION_SECRET } = require("./config/app.config.js").security;
 
 const PORT = process.env.PORT || 3000;
 
@@ -22,6 +26,17 @@ app.use("/public", express.static(path.join(__dirname, "/public")));
 
 // set accesslogger
 app.use(accesslogger());
+
+// set cookie
+app.use(cookieParser());
+
+// set session
+app.use(session({
+  secret: SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  name: "atoviag_sid"
+}));
 
 // set routes
 app.use("/", require("./routes/index.js"));
