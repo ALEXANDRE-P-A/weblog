@@ -96,12 +96,16 @@ router.post("/regist/execute", async (req, res) => {
     await db.collection("posts").insertOne(original);
     delete req.session._csrf;
     res.clearCookie("_csrf");
-    res.render("./account/posts/regist-complete.ejs");
+    res.redirect("/account/posts/regist/execute");
   } catch(err) {
     console.log(err);
   } finally {
     await client.close();
   }
+});
+
+router.get("/regist/execute", (req, res) => {
+  res.render("./account/posts/regist-complete.ejs");
 });
 
 module.exports = router;

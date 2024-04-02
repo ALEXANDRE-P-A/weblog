@@ -9,7 +9,12 @@ btn_submit.forEach(btn => {
     submitForm.submit();
     submitForm.setAttribute("method", "");
     submitForm.setAttribute("action", "");
-    submitForm.addEventListener("submit", false);
-    each.disabled = true;
+    submitForm.addEventListener("submit", e => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+    btn_submit.forEach(btn => {
+      btn.disabled = true;
+    });
   });
 });

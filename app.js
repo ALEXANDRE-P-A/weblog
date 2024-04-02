@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 const logger = require("./lib/log/logger.js");
 const applicationlogger = require("./lib/log/applicationlogger.js");
@@ -29,6 +30,9 @@ app.use(accesslogger());
 
 // set cookie
 app.use(cookieParser());
+
+// set flash
+app.use(flash());
 
 // set session
 app.use(session({
